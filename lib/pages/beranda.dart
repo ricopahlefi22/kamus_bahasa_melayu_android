@@ -1,10 +1,14 @@
-import 'package:kamus_bahasa_melayu/floating_search_button.dart';
 import 'package:kamus_bahasa_melayu/main.dart';
 import 'package:flutter/material.dart';
 
-class Beranda extends StatelessWidget {
+class Beranda extends StatefulWidget {
   const Beranda({key}) : super(key: key);
 
+  @override
+  State<Beranda> createState() => _BerandaState();
+}
+
+class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +40,6 @@ class Beranda extends StatelessWidget {
               ],
             ),
           ),
-          const SearchButton()
         ],
       ),
     );

@@ -20,16 +20,16 @@ class _DetailIdiomState extends State<DetailIdiom> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
                 SizedBox(
-                  width: 400,
+                  width: MediaQuery.of(context).size.width * 0.75,
                   child: Text(
                     (Get.arguments[0].toString()),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                     ),
@@ -37,13 +37,13 @@ class _DetailIdiomState extends State<DetailIdiom> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
                 SizedBox(
-                  width: 400,
+                  width: MediaQuery.of(context).size.width * 0.75,
                   child: Text(
                     (Get.arguments[1].toString()),
                   ),

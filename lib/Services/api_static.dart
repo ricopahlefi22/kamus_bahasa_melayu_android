@@ -1,23 +1,23 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:kamus_bahasa_melayu/Model/kata.dart';
+import 'package:kamus_bahasa_melayu/Model/index.dart';
 
 import 'package:kamus_bahasa_melayu/Services/config.dart';
 
-class ApiKataStatic {
+class ApiIndexStatic {
   static getHost() {
     return CONFIG.host;
   }
 
-  static Future<List<Kata>> getKata() async {
+  static Future<List<Index>> getIndex() async {
     try {
-      String url = getHost() + "/api/kata";
+      String url = getHost() + "api/index";
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         var json = jsonDecode(response.body);
-        final parsed = json['kata'].cast<Map<String, dynamic>>();
-        return parsed.map<Kata>((json) => Kata.fromJson(json)).toList();
+        final parsed = json['index'].cast<Map<String, dynamic>>();
+        return parsed.map<Index>((json) => Index.fromJson(json)).toList();
       } else {
         return [];
       }

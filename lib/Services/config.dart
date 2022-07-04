@@ -1,3 +1,3 @@
 class CONFIG {
-  static const host = 'http://192.168.1.5/KBMK';
+  static const host = 'http://192.168.100.54:8000/';
 }

@@ -6,7 +6,6 @@ import 'package:kamus_bahasa_melayu/pages/idiom.dart';
 import 'package:kamus_bahasa_melayu/pages/index.dart';
 import 'package:kamus_bahasa_melayu/pages/kosakata.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 
 void main() {

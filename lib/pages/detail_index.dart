@@ -26,7 +26,7 @@ class _DetailIndexState extends State<DetailIndex> {
             Row(
               children: [
                 SizedBox(
-                  width: 400,
+                  width: MediaQuery.of(context).size.width * 0.7,
                   child: Text(
                     (Get.arguments[0].toString()),
                     style: const TextStyle(
@@ -43,7 +43,7 @@ class _DetailIndexState extends State<DetailIndex> {
             Row(
               children: [
                 SizedBox(
-                  width: 400,
+                  width: MediaQuery.of(context).size.width * 0.75,
                   child: Text(
                     'Kategori : ' + (Get.arguments[2].toString()),
                     style: const TextStyle(
@@ -60,7 +60,7 @@ class _DetailIndexState extends State<DetailIndex> {
             Row(
               children: [
                 SizedBox(
-                  width: 400,
+                  width: MediaQuery.of(context).size.width * 0.75,
                   child: Text(
                     (Get.arguments[1].toString()),
                   ),

@@ -20,27 +20,27 @@ class _DetailKosakataState extends State<DetailKosakata> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
                 Text(
                   (Get.arguments[0].toString()),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
               children: [
-                Container(
-                  width: 400,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.75,
                   child: Text(
                     (Get.arguments[1].toString()),
                   ),
