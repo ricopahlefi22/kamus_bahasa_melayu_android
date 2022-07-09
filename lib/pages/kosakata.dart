@@ -17,7 +17,7 @@ class _KosaKataState extends State<KosaKata> {
   TextEditingController searchController = TextEditingController();
   Icon appBarIcon = const Icon(Icons.search);
   Widget appBarTitle = const Text("KosaKata");
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,14 +62,14 @@ class _KosaKataState extends State<KosaKata> {
             return const Center(child: CircularProgressIndicator());
           } else {
             List<Kata> listKata;
-            if(searchController.text.isEmpty) {
-            listKata = snapshot.data!;
+            if (searchController.text.isEmpty) {
+              listKata = snapshot.data!;
             } else {
-            listKata = snapshot.data!
-                .where((element) => element.namaKata
-                    .toLowerCase()
-                    .contains(searchController.text.toLowerCase()))
-                .toList();
+              listKata = snapshot.data!
+                  .where((element) => element.namaKata
+                      .toLowerCase()
+                      .contains(searchController.text.toLowerCase()))
+                  .toList();
             }
             return Container(
               padding: const EdgeInsets.all(5),
@@ -90,7 +90,10 @@ class _KosaKataState extends State<KosaKata> {
                               onTap: () {
                                 Get.toNamed('/detailkosakata', arguments: [
                                   listKata[index].namaKata,
-                                  listKata[index].deskripsi
+                                  listKata[index].pelafalan,
+                                  listKata[index].deskripsi,
+                                  listKata[index].namaKategori,
+                                  listKata[index].audio,
                                 ]);
                               },
                             ),

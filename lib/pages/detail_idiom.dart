@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,14 +21,15 @@ class _DetailIdiomState extends State<DetailIdiom> {
         padding: const EdgeInsets.fromLTRB(30, 5, 30, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 20,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.75,
+                Flexible(
                   child: Text(
                     (Get.arguments[0].toString()),
                     style: const TextStyle(
@@ -35,17 +38,32 @@ class _DetailIdiomState extends State<DetailIdiom> {
                     ),
                   ),
                 ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/images/volume.png',
+                      width: 20,
+                    ),
+                  ),
+                ),
               ],
             ),
-            const SizedBox(
-              height: 20,
+            Text(
+              (Get.arguments[1].toString()),
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Row(
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.75,
+                Flexible(
                   child: Text(
-                    (Get.arguments[1].toString()),
+                    (Get.arguments[2].toString()),
                   ),
                 ),
               ],

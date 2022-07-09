@@ -88,7 +88,10 @@ class _IdiomPageState extends State<IdiomPage> {
                             onTap: () {
                               Get.toNamed('/detailidiom', arguments: [
                                 listIdiom[index].namaKata,
-                                listIdiom[index].deskripsi
+                                listIdiom[index].pelafalan,
+                                listIdiom[index].deskripsi,
+                                listIdiom[index].namaKategori,
+                                listIdiom[index].audio,
                               ]);
                             },
                           ),
