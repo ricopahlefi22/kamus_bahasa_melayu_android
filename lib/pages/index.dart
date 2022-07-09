@@ -89,8 +89,10 @@ class _IndexPageState extends State<IndexPage> {
                             onTap: () {
                               Get.toNamed('/detailindex', arguments: [
                                 listIndex[index].namaKata,
+                                listIndex[index].pelafalan,
                                 listIndex[index].deskripsi,
                                 listIndex[index].namaKategori,
+                                listIndex[index].audio,
                               ]);
                             },
                           ),

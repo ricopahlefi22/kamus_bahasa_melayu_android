@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +12,24 @@ class DetailIndex extends StatefulWidget {
 }
 
 class _DetailIndexState extends State<DetailIndex> {
+  AudioPlayer audioPlayer = AudioPlayer();
+  String url = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3';
+
+  @override
+  void initState() {
+    super.initState();
+
+    audioPlayer.onPlayerStateChanged.listen((event) {
+      setState(() {});
+    });
+
+    audioPlayer.setSourceUrl(url);
+  }
+
+  playMusic() async {
+    await audioPlayer.play(UrlSource(url));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +40,15 @@ class _DetailIndexState extends State<DetailIndex> {
         padding: const EdgeInsets.fromLTRB(30, 5, 30, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 20,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.7,
+                Flexible(
                   child: Text(
                     (Get.arguments[0].toString()),
                     style: const TextStyle(
@@ -35,34 +57,47 @@ class _DetailIndexState extends State<DetailIndex> {
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.75,
-                  child: Text(
-                    'Kategori : ' + (Get.arguments[2].toString()),
-                    style: const TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w400,
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/images/volume.png',
+                      width: 20,
                     ),
                   ),
                 ),
               ],
             ),
+            Text(
+              (Get.arguments[1].toString()),
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Row(
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.75,
+                Flexible(
                   child: Text(
-                    (Get.arguments[1].toString()),
+                    'kategori : ' + (Get.arguments[3].toString()),
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Flexible(
+                  child: Text(
+                    (Get.arguments[2].toString()),
                   ),
                 ),
               ],

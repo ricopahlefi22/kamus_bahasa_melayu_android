@@ -1,4 +1,3 @@
-import 'package:kamus_bahasa_melayu/pages/beranda.dart';
 import 'package:kamus_bahasa_melayu/pages/detail_idiom.dart';
 import 'package:kamus_bahasa_melayu/pages/detail_index.dart';
 import 'package:kamus_bahasa_melayu/pages/detail_kosakata.dart';
@@ -7,6 +6,7 @@ import 'package:kamus_bahasa_melayu/pages/index.dart';
 import 'package:kamus_bahasa_melayu/pages/kosakata.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kamus_bahasa_melayu/pages/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,10 +23,6 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       getPages: [
-        GetPage(
-          name: '/beranda',
-          page: () => const Beranda(),
-        ),
         GetPage(
           name: '/index',
           page: () => const IndexPage(),
@@ -51,10 +47,6 @@ class MyApp extends StatelessWidget {
           name: '/detailidiom',
           page: () => const DetailIdiom(),
         ),
-        // GetPage(
-        //   name: '/idiom',
-        //   page: () => const Idiom(),
-        // ),
       ],
       title: "Kamus Bahasa Melayu Ketapang",
       debugShowCheckedModeBanner: false,
@@ -75,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       drawer: Navbar(),
-      body: Beranda(),
+      body: SplashScreen(),
     );
   }
 }
@@ -117,8 +109,6 @@ class _NavbarState extends State<Navbar> {
               ),
             ),
           ),
-          buildNavbarItem(Icons.home, "Beranda", '/beranda'),
-          const Divider(),
           buildNavbarItem(Icons.sort_by_alpha_outlined, "Index", '/index'),
           buildNavbarItem(Icons.book_outlined, "Kosakata", '/kosakata'),
           buildNavbarItem(Icons.speaker_group_outlined, "Idiom", '/idiom'),
